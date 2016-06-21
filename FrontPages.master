@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h1>Welcome to SuperSite Inc!</h1>
+        <asp:ContentPlaceHolder ID="FrontPageContent"
+            runat="server" />
+        <p>Copyright 2016</p>
+    </div>
+    </form>
+</body>
+</html>
