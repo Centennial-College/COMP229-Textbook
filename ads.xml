@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageURL>test.gif</ImageURL>
+    <NavigateURL>http://www.google.ca</NavigateURL>
+    <TargetURL>_blank</TargetURL>
+    <AlternateText>Test gif goes here</AlternateText>
+    <Keyword>Test Site</Keyword>
+    <Impressions>2</Impressions>
+  </Ad>
+  <Ad>
+    <ImageURL>test2.gif</ImageURL>
+    <NavigateURL>http://www.yahoo.ca</NavigateURL>
+    <TargetURL>_blank</TargetURL>
+    <AlternateText>Test2 gif goes here</AlternateText>
+    <Keyword>Test2 Site</Keyword>
+    <Impressions>1</Impressions>
+  </Ad>
+</Advertisements>
