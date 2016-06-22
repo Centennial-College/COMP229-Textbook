@@ -58,11 +58,11 @@
             <p>
                 Birth Date:<br />
                 <asp:TextBox ID="birthDateTextBox" runat="server" />
-                <asp:CompareValidator ID="birthDateCheck" runat="server"
-                    Operator="DataTypeCheck" Type="Date"
-                    ControlToValidate="birthDateTextBox"
-                    ErrorMessage="You must enter the date in the valid format!"
-                    SetFocusOnError="true" Display="Dynamic" />
+                <asp:RangeValidator ID="birthDateRangeTest" runat="server"
+                    Type="Date" ControlToValidate="birthDateTextBox" 
+                    MinimumValue="1/1/1970" MaximumValue="31/12/1979"
+                    ErrorMessage="You must have been born in the 1970s to use
+                    this web site!" />
             </p>
             <!-- Submit Button -->
             <p>
