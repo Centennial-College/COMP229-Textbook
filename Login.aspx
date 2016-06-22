@@ -54,6 +54,16 @@
                     ControlToValidate="ageTextBox" ValueToCompare="15"
                     ErrorMessage="You must be 16 years or older to log in" />
             </p>
+            <!-- Birth Date (day-month-year format by location default) -->
+            <p>
+                Birth Date:<br />
+                <asp:TextBox ID="birthDateTextBox" runat="server" />
+                <asp:CompareValidator ID="birthDateCheck" runat="server"
+                    Operator="DataTypeCheck" Type="Date"
+                    ControlToValidate="birthDateTextBox"
+                    ErrorMessage="You must enter the date in the valid format!"
+                    SetFocusOnError="true" Display="Dynamic" />
+            </p>
             <!-- Submit Button -->
             <p>
                 <asp:Button Text="Submit" ID="submitButton"
