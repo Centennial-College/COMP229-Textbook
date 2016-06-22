@@ -9,15 +9,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <!-- Username -->
+            <!-- Email Address -->
             <p>
-                Username:<br />
-                <asp:TextBox ID="usernameTextBox" runat="server" />
-                <asp:RequiredFieldValidator ID="usernameReq"
-                    runat="server"
-                    ControlToValidate="usernameTextBox"
-                    ErrorMessage="Username is required!"
-                    SetFocusOnError="true" />
+                Email address:<br />
+                <asp:TextBox ID="emailTextBox" runat="server" />
+                <asp:RequiredFieldValidator ID="emailReq" runat="server"
+                    ControlToValidate="emailTextBox"
+                    ErrorMessage="Email address is required!"
+                    SetFocusOnError="true" Display="Dynamic" />
+                <asp:RegularExpressionValidator ID="emailValidator"
+                    runat="server" ControlToValidate="emailTextBox"
+                    ValidationExpression="^\S+@\S+\.\S+$"
+                    ErrorMessage="You must enter a valid email address!" />
             </p>
             <!-- Password -->
             <p>
