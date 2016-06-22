@@ -21,7 +21,7 @@
             </p>
             <!-- Password -->
             <p>
-                Password:<br />
+                Password and Confirmation:<br />
                 <asp:TextBox ID="passwordTextBox" runat="server"
                     TextMode="Password" />
                 <asp:RequiredFieldValidator ID="passwordReq"
@@ -35,6 +35,24 @@
                     runat="server" ControlToValidate="confirmPasswordTextBox"
                     ErrorMessage="Password confirmation is required!"
                     SetFocusOnError="True" Display="Dynamic" />
+                <asp:CompareValidator ID="comparePasswords" runat="server"
+                    ControlToCompare="passwordTextBox"
+                    ControlToValidate="confirmPasswordTextBox"
+                    ErrorMessage="Your passwords do not match up!"
+                    Display="Dynamic" />
+            </p>
+            <!-- Age -->
+            <p>
+                Age:<br />
+                <asp:TextBox ID="ageTextBox" runat="server" />
+                <asp:RequiredFieldValidator ID="ageReq" runat="server"
+                    ControlToValidate="ageTextBox"
+                    ErrorMessage="Age is required!"
+                    SetFocusOnError="true" Display="Dynamic" />
+                <asp:CompareValidator ID="ageCheck" runat="server"
+                    Operator="GreaterThan" Type="Integer"
+                    ControlToValidate="ageTextBox" ValueToCompare="15"
+                    ErrorMessage="You must be 16 years or older to log in" />
             </p>
             <!-- Submit Button -->
             <p>
