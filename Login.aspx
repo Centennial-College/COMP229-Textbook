@@ -59,7 +59,7 @@
                 Birth Date:<br />
                 <asp:TextBox ID="birthDateTextBox" runat="server" />
                 <asp:RangeValidator ID="birthDateRangeTest" runat="server"
-                    Type="Date" ControlToValidate="birthDateTextBox" 
+                    Type="Date" ControlToValidate="birthDateTextBox"
                     MinimumValue="1/1/1970" MaximumValue="31/12/1979"
                     ErrorMessage="You must have been born in the 1970s to use
                     this web site!" />
@@ -69,6 +69,11 @@
                 <asp:Button Text="Submit" ID="submitButton"
                     runat="server"
                     OnClick="submitButton_Click" />
+            </p>
+            <!-- Validation Summary -->
+            <p>
+                <asp:ValidationSummary ID="vSummary" runat="server"
+                    ShowMessageBox="true" />
             </p>
         </div>
     </form>
