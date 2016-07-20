@@ -34,24 +34,34 @@
             comm.Parameters.Add("@EmployeeID", System.Data.SqlDbType.Int);
             comm.Parameters["@EmployeeID"].Value = employeeID;
 
-            conn.Open();
-            reader = comm.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                userLabel.Text = "Employee ID: " +
-                    reader["EmployeeID"] + "<br />" +
-                    "Name: " + reader["Name"] + "<br />" +
-                    "Username: " + reader["Username"] + "<br />" +
-                    "Password: " + reader["Password"];
-            }
-            else
-            {
-                userLabel.Text = "There is no user with this ID: " + employeeID;
-            }
+                conn.Open();
+                reader = comm.ExecuteReader();
 
-            reader.Close();
-            conn.Close();
+                if (reader.Read())
+                {
+                    userLabel.Text = "Employee ID: " +
+                        reader["EmployeeID"] + "<br />" +
+                        "Name: " + reader["Name"] + "<br />" +
+                        "Username: " + reader["Username"] + "<br />" +
+                        "Password: " + reader["Password"];
+                }
+                else
+                {
+                    userLabel.Text = "There is no user with this ID: " + employeeID;
+                }
+
+                reader.Close();
+            }
+            catch
+            {
+                userLabel.Text = "Error retrieving user data";
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 </script>
